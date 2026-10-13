@@ -1,0 +1,63 @@
+export const STORAGE_KEYS = {
+  orders: 'deliveryManagement.orders',
+  agents: 'deliveryManagement.agents',
+  config: 'deliveryManagement.config',
+};
+
+export const ORDER_STATUS = {
+  PENDING: 'PENDING',
+  ASSIGNED: 'ASSIGNED',
+  PICKED_UP: 'PICKED_UP',
+  IN_TRANSIT: 'IN_TRANSIT',
+  DELIVERED: 'DELIVERED',
+  CANCELLED: 'CANCELLED',
+};
+
+export const ORDER_STATUS_LABELS = {
+  PENDING: 'Pending',
+  ASSIGNED: 'Assigned',
+  PICKED_UP: 'Picked Up',
+  IN_TRANSIT: 'In Transit',
+  DELIVERED: 'Delivered',
+  CANCELLED: 'Cancelled',
+};
+
+export const VALID_STATUS_TRANSITIONS = {
+  PENDING: [ORDER_STATUS.ASSIGNED, ORDER_STATUS.CANCELLED],
+  ASSIGNED: [ORDER_STATUS.PICKED_UP, ORDER_STATUS.CANCELLED],
+  PICKED_UP: [ORDER_STATUS.IN_TRANSIT, ORDER_STATUS.CANCELLED],
+  IN_TRANSIT: [ORDER_STATUS.DELIVERED, ORDER_STATUS.CANCELLED],
+  DELIVERED: [],
+  CANCELLED: [],
+};
+
+export const PRIORITY = {
+  LOW: 'LOW',
+  NORMAL: 'NORMAL',
+  HIGH: 'HIGH',
+  URGENT: 'URGENT',
+};
+
+export const PRIORITY_LEVELS = [
+  PRIORITY.LOW,
+  PRIORITY.NORMAL,
+  PRIORITY.HIGH,
+  PRIORITY.URGENT,
+];
+
+export const AGENT_AVAILABILITY = {
+  AVAILABLE: 'AVAILABLE',
+  BUSY: 'BUSY',
+  OFFLINE: 'OFFLINE',
+};
+
+export const AGENT_AVAILABILITY_LABELS = {
+  AVAILABLE: 'Available',
+  BUSY: 'Busy',
+  OFFLINE: 'Offline',
+};
+
+export const DEFAULT_PRIORITY = PRIORITY.NORMAL;
+export const DEFAULT_ORDER_STATUS = ORDER_STATUS.PENDING;
+export const DEFAULT_AGENT_AVAILABILITY = AGENT_AVAILABILITY.AVAILABLE;
+export const DEFAULT_MAX_CAPACITY = 3;

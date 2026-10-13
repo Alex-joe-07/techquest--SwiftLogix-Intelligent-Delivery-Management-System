@@ -1,0 +1,18 @@
+{
+  "name": "intelligent-delivery-management-system",
+  "version": "1.0.0",
+  "description": "Intelligent Delivery Management System with deterministic scoring assignment",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/test_suite.mjs",
+    "start": "node -e \"import('http').then(({createServer}) => import('fs').then(({readFileSync, existsSync}) => import('path').then(({join, extname}) => createServer((req, res) => { const url = req.url === '/' ? '/index.html' : req.url; const p = join('./src', url); if (existsSync(p)) { const ext = extname(p); const mime = {'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json'}[ext] || 'text/plain'; res.writeHead(200, {'Content-Type': mime}); res.end(readFileSync(p)); } else { res.writeHead(404); res.end('Not Found'); } }).listen(3000, () => console.log('Server running at http://localhost:3000')))))\""
+  },
+  "keywords": [
+    "delivery",
+    "logistics",
+    "vanilla-javascript",
+    "smart-assignment"
+  ],
+  "author": "",
+  "license": "ISC"
+}

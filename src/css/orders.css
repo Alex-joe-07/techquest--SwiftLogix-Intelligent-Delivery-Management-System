@@ -1,0 +1,213 @@
+/* Orders View Styles */
+
+.orders-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 1100px) {
+  .orders-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Filter Controls Toolbar */
+.filter-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+  background: var(--color-surface);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.filter-toolbar__search {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-toolbar__selects {
+  display: flex;
+  gap: 10px;
+}
+
+/* Orders List & Cards */
+.order-list-container {
+  max-height: 750px;
+  overflow-y: auto;
+}
+
+.order-items-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order-card-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.order-card-item:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(2px);
+}
+
+.order-card-item.selected {
+  border-color: var(--color-primary);
+  border-left-width: 4px;
+  background-color: #F8FAFC;
+}
+
+.order-card-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.order-id {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+.order-customer {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: var(--color-text);
+}
+
+.order-location {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.order-card-item__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--color-text-subtle);
+  border-top: 1px solid #F1F5F9;
+  padding-top: 8px;
+}
+
+/* Order Details Card & Lifecycle Control */
+.order-detail-panel {
+  position: sticky;
+  top: 20px;
+}
+
+.detail-dl {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 10px;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.detail-dl dt {
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.detail-dl dd {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* Lifecycle Progress Stepper */
+.lifecycle-stepper {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 24px 0;
+  padding: 0 10px;
+}
+
+.lifecycle-stepper::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 30px;
+  right: 30px;
+  height: 2px;
+  background-color: var(--color-border);
+  z-index: 1;
+}
+
+.stepper-step {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stepper-node {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--color-border);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  transition: all 0.2s ease;
+}
+
+.stepper-step.completed .stepper-node {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: #fff;
+}
+
+.stepper-step.active .stepper-node {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 0 0 4px var(--color-primary-light);
+}
+
+.stepper-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  max-width: 70px;
+}
+
+.stepper-step.active .stepper-label,
+.stepper-step.completed .stepper-label {
+  color: var(--color-text);
+}
+
+/* Lifecycle Action Buttons Box */
+.lifecycle-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}

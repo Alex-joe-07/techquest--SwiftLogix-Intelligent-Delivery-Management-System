@@ -1,0 +1,50 @@
+[
+  {
+    "id": "AGT-001",
+    "name": "Alex Rivera",
+    "phone": "555-0201",
+    "location": "Downtown Metro Hub",
+    "latitude": 37.7890,
+    "longitude": -122.4020,
+    "availability": "AVAILABLE",
+    "activeOrders": 0,
+    "maxCapacity": 3,
+    "createdAt": "2026-09-01T08:00:00.000Z"
+  },
+  {
+    "id": "AGT-002",
+    "name": "Marcus Chen",
+    "phone": "555-0202",
+    "location": "Mission District Center",
+    "latitude": 37.7550,
+    "longitude": -122.4180,
+    "availability": "AVAILABLE",
+    "activeOrders": 1,
+    "maxCapacity": 3,
+    "createdAt": "2026-09-01T08:30:00.000Z"
+  },
+  {
+    "id": "AGT-003",
+    "name": "Sarah Jenkins",
+    "phone": "555-0203",
+    "location": "SoMa Station",
+    "latitude": 37.7810,
+    "longitude": -122.4050,
+    "availability": "BUSY",
+    "activeOrders": 2,
+    "maxCapacity": 3,
+    "createdAt": "2026-09-01T09:00:00.000Z"
+  },
+  {
+    "id": "AGT-004",
+    "name": "David Kim",
+    "phone": "555-0204",
+    "location": "Presidio Outpost",
+    "latitude": 37.7980,
+    "longitude": -122.4660,
+    "availability": "OFFLINE",
+    "activeOrders": 0,
+    "maxCapacity": 3,
+    "createdAt": "2026-09-02T10:00:00.000Z"
+  }
+]
